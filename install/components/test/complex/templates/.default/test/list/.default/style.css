@@ -1,0 +1,6 @@
+#workarea .notebook-catalog--list .bx-pagination-container li {
+    text-indent: 0;
+}
+#workarea .notebook-catalog--list .bx-pagination-container li:before {
+    content: none;
+}
