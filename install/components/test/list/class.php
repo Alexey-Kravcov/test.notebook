@@ -113,7 +113,8 @@ class NotebookList extends CBitrixComponent
             'filter' => ['MANUFACTURER.CODE' => $this->arParams['BRAND']],
         ], $this->getAdvParams());
         $result = ModelTable::getList($params);
-        $this->arResult['NAV']->setRecordCount($result->getCount());
+        $this->arResult['ITEM_COUNT'] = $result->getCount();
+        $this->arResult['NAV']->setRecordCount($this->arResult['ITEM_COUNT']);
 
         $arData = [];
         while ($element = $result->fetchObject()) {
@@ -135,7 +136,8 @@ class NotebookList extends CBitrixComponent
             'select' => ['*'],
         ], $this->getAdvParams());
         $result = ManufacturerTable::getList($params);
-        $this->arResult['NAV']->setRecordCount($result->getCount());
+        $this->arResult['ITEM_COUNT'] = $result->getCount();
+        $this->arResult['NAV']->setRecordCount($this->arResult['ITEM_COUNT']);
 
         $arData = [];
         while ($brand = $result->fetch()) {
